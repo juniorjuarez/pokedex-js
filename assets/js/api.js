@@ -57,26 +57,26 @@ async function allPokemons() {
       </div>
       `;
     });
-
-    const totalPages = Math.ceil(json.count / 20);
-    const state = {
-      page: 1,
-      perPage: 12,
-      totalPages,
-    };
-
-    const controls = {
-      next() {
-        state.page++;
-        if (true) {
-        }
-      },
-      prev() {},
-      goTo() {},
-    };
   } catch (error) {
     consle.log(`Error ao buscar pokemons: ${error}`);
   }
 }
 
 allPokemons();
+
+// const totalPages = Math.ceil(json.count / 20);
+// const state = {
+//   page: 1,
+//   perPage: 12,
+//   totalPages,
+// };
+
+// const controls = {
+//   next() {
+//     state.page++;
+//     if (true) {
+//     }
+//   },
+//   prev() {},
+//   goTo() {},
+// };
