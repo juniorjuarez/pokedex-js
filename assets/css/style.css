@@ -1,0 +1,296 @@
+/* Reset CSS Moderno */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+body {
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.title {
+  margin: 10px;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+#logo .logo-img {
+  width: 400px;
+}
+
+#pokemonContainer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#pokemonSearch {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #ccc; /* Cor suave para a borda */
+  border-radius: 8px;
+  padding: 1rem;
+  border-radius: 15px;
+  padding: 20px; /* Adiciona espaçamento interno */
+  background: #fff; /* Fundo branco */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+#search {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  font: inherit;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #007bff;
+}
+#search input {
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  width: 12rem;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  margin-right: 0.5rem;
+}
+
+#search input:hover {
+  border-color: #007bff;
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+  transition: 0.3s ease-in-out;
+}
+
+#search button {
+  padding: 0.5rem 1rem;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+#search button:hover {
+  background-color: white;
+  color: #007bff;
+  transition: 0.3s ease-in-out;
+}
+
+#pokemonInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ccc; /* Cor suave para a borda */
+  border-radius: 15px;
+  padding: 20px; /* Adiciona espaçamento interno */
+  width: 300px; /* Define um tamanho fixo */
+  background: #fff; /* Fundo branco */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Efeito de zoom leve ao passar o mouse */
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15); /* Realce na sombra */
+}
+
+.card img {
+  width: 120px; /* Aumentei um pouco o tamanho */
+  height: auto;
+  margin-bottom: 10px; /* Espaço entre a imagem e o texto */
+  transition: transform 0.3s ease-in-out;
+}
+
+.card img:hover {
+  transform: scale(1.1); /* Pequeno zoom na imagem ao passar o mouse */
+}
+
+.card h3 {
+  font-size: 20px; /* Tamanho ajustado */
+  font-weight: bold; /* Deixa o nome mais destacado */
+  color: #333; /* Cor mais escura para contraste */
+  margin: 10px 0; /* Espaçamento entre a imagem e o nome */
+  text-transform: capitalize; /* Primeira letra maiúscula */
+  transition: color 0.3s ease-in-out;
+}
+
+.card:hover h3 {
+  color: #007bff; /* Muda a cor no hover para azul */
+}
+
+.card p {
+  font-size: 16px; /* Tamanho ajustado */
+  color: #666; /* Cor mais escura para contraste */
+  margin-bottom: 10px; /* Espaçamento entre o nome e o texto */
+}
+
+/*Lista de Pokemons*/
+
+#listPokemon {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(150px, 1fr)
+  ); /* Ajusta as colunas automaticamente */
+  gap: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.cardListItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ccc; /* Cor suave para a borda */
+  border-radius: 15px;
+  padding: 20px; /* Adiciona espaçamento interno */
+  width: 150px; /* Define um tamanho fixo */
+  background: #fff; /* Fundo branco */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.cardListItem:hover {
+  transform: scale(1.05); /* Efeito de zoom leve ao passar o mouse */
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15); /* Realce na sombra */
+}
+
+.cardListItem img {
+  width: 120px; /* Aumentei um pouco o tamanho */
+  height: auto;
+  margin-bottom: 10px; /* Espaço entre a imagem e o texto */
+  transition: transform 0.3s ease-in-out;
+}
+
+.cardListItem img:hover {
+  transform: scale(1.1); /* Pequeno zoom na imagem ao passar o mouse */
+}
+
+.cardListItem h3 {
+  font-size: 20px; /* Tamanho ajustado */
+  font-weight: bold; /* Deixa o nome mais destacado */
+  color: #333; /* Cor mais escura para contraste */
+  margin: 10px 0; /* Espaçamento entre a imagem e o nome */
+  text-transform: capitalize; /* Primeira letra maiúscula */
+  transition: color 0.3s ease-in-out;
+}
+
+.cardListItem:hover h3 {
+  color: #007bff; /* Muda a cor no hover para azul */
+}
+/* Estilos para os botões de paginação */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 10px; /* Espaço entre os botões */
+}
+
+.controls div {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.controls div:not(.numbers),
+.controls div.numbers div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Gradiente azul */
+  color: white;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.controls div:hover {
+  transform: scale(1.1);
+  background: linear-gradient(
+    135deg,
+    #0056b3,
+    #003c82
+  ); /* Gradiente mais escuro no hover */
+}
+
+.numbers {
+  display: flex;
+  gap: 5px;
+}
+
+.numbers div {
+  background: #fff;
+  color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+}
+
+.numbers div:hover {
+  background: #007bff;
+  color: white;
+}

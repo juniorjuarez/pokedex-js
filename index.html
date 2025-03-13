@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex JS</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div id="logo">
+      <img
+        class="logo-img"
+        src="assets/img/International_Pokémon_logo.svg.png"
+        alt="Pokedex"
+      />
+    </div>
+    <div id="pokemonContainer">
+      <div id="pokemonSearch">
+        <div id="search">
+          <input type="text" id="input-search" placeholder="Search Pokemon" />
+          <button class="btn-busca-pokemon" onclick="searchPokemon()">
+            Buscar
+          </button>
+        </div>
+        <div id="pokemonInfo"></div>
+      </div>
+      <h3 class="title">Lista de Pokemons</h3>
+      <div id="listPokemon"></div>
+
+
+       <div class="controls">
+            <div class="first">&#171;</div>
+            <div class="prev"><</div>
+            <div class="numbers">
+                <div>1</div>
+            </div>
+            <div class="next">></div>
+            <div class="last">&#187;
+    </div>
+    <div id="pokemonList" class="pokemon-list"></div>
+    <script src="assets/js/api.js"></script>
+  </body>
+</html>
