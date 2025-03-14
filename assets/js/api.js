@@ -1,5 +1,6 @@
 let pokemonInfo = document.getElementById("pokemonInfo");
 let input = document.getElementById("input-search").value.trim().toLowerCase();
+const pokemonGrid = document.getElementById("listPokemon");
 
 async function searchPokemon() {
   let input = document
@@ -39,9 +40,32 @@ async function searchPokemon() {
   }
 }
 
-async function allPokemons() {
+// async function allPokemons() {
+//   try {
+//     const urlPokemon = "https://pokeapi.co/api/v2/pokemon?limit=200";
+//     const req = await fetch(urlPokemon);
+//     const json = await req.json();
+
+//     json.results.forEach(async (pokemon) => {
+//       const pokemonReq = await fetch(pokemon.url);
+//       const pokemonJson = await pokemonReq.json();
+//       const pokemonImg = pokemonJson.sprites.front_default;
+//       const pokemonGrid = document.getElementById("listPokemon");
+
+//       pokemonGrid.innerHTML += `
+//       <div class="cardListItem">
+//       <img src="${pokemonImg}" alt="${pokemon.name}">
+//       <h3>${pokemon.name}</h3>
+//       </div>
+//       `;
+//     });
+//   } catch (error) {
+//     consle.log(`Error ao buscar pokemons: ${error}`);
+//   }
+// }
+async function allPokemons(limit, offset) {
   try {
-    const urlPokemon = "https://pokeapi.co/api/v2/pokemon?limit=200";
+    const urlPokemon = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
     const req = await fetch(urlPokemon);
     const json = await req.json();
 
@@ -63,21 +87,33 @@ async function allPokemons() {
   }
 }
 
-allPokemons();
+allPokemons(40, 0);
 
-// const totalPages = Math.ceil(json.count / 20);
-// const state = {
-//   page: 1,
-//   perPage: 12,
-//   totalPages,
-// };
+const state = {
+  page: parseInt(document.querySelector(".pageNumbers").textContent),
+  offset: 0,
+  limit: 40,
+};
 
-// const controls = {
-//   next() {
-//     state.page++;
-//     if (true) {
-//     }
-//   },
-//   prev() {},
-//   goTo() {},
-// };
+const controls = {
+  next() {
+    state.page++;
+    document.querySelector(".pageNumbers").textContent = state.page;
+    state.offset = state.page * state.limit;
+
+    pokemonGrid.innerHTML = "";
+    allPokemons(state.limit, state.offset);
+    if (true) {
+    }
+  },
+  prev() {
+    if (state.page > 1) {
+      state.page--;
+      document.querySelector(".pageNumbers").textContent = state.page;
+      state.offset = state.page * 20;
+      pokemonGrid.innerHTML = "";
+      allPokemons(state.limit, state.offset);
+    }
+  },
+  goTo() {},
+};
