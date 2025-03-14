@@ -26,18 +26,25 @@
       </div>
       <h3 class="title">Lista de Pokemons</h3>
       <div id="listPokemon"></div>
-
+      <!-- <label for="itemsPerPage">Itens por página:</label>
+        <select id="itemsPerPage">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+        </select> -->
 
        <div class="controls">
-            <div class="first">&#171;</div>
-            <div class="prev"><</div>
-            <div class="numbers">
+            <!-- <div class="first" >&#171;</div> -->
+            <div class="prev" onclick="controls.prev()"><</div>
+             <div class="pageNumbers">
                 <div>1</div>
             </div>
-            <div class="next">></div>
-            <div class="last">&#187;</div>
+            <div class="next" onclick="controls.next()">></div>
+            <!-- <div class="last">&#187;</div> -->
     </div>
     <div id="pokemonList" class="pokemon-list"></div>
+
+
     <script src="assets/js/api.js"></script>
   </body>
 </html>
