@@ -28,6 +28,7 @@ async function searchPokemon() {
       <p><strong>Altura</strong>: ${json.height} decímetros</p>
       <p><strong>Peso:</strong> ${json.weight} hectogramas</p>
       <p><strong>Experiência</strong> base: ${json.base_experience}</p>
+      <button onclick="pokemonInfo.innerHTML = ''" class="close">X</button>
       </div>
         `;
         document.getElementById("input-search").value = "";
